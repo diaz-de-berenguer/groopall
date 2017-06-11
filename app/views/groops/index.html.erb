@@ -1,2 +1,27 @@
-<h1>Groops#index</h1>
-<p>Find me in app/views/groops/index.html.erb</p>
+<div id="groops-index">
+	<div class="col-md-8 col-md-offset-2">
+		<% @groops.each do |g| %>
+			<div class="loop-of-groops">
+				<%= render 'each_groop', g: g if g.id %>
+			</div>
+		<% end %>
+
+		<div class="add-friends">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						Scroll down to<br>
+						add friends!
+						<h1>
+							<i class="fa fa-arrow-down" aria-hidden="true"></i>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="new-groop">
+			<%= render "new_groop" %>
+		</div>
+	</div>
+</div><!-- #groops-index -->

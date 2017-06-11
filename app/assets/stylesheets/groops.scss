@@ -1,3 +1,46 @@
-// Place all the styles related to the groops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#groops-index {
+	.add-friends {
+		// width: 100%;
+		// height: 100%;
+		// position: absolute;
+		padding: 12em 0;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.loop-of-groops {
+		margin-top: -2.5em;
+	}
+	.each-row {
+		margin-bottom: -2.5em;
+		padding-top: 2.7em;
+		border-bottom: 2px solid $second-color;
+		.nickname {
+			padding-top: 0.5em;
+			a {
+				color: $grey-color;
+			}
+		}
+		.btn-group {
+			margin-top: 1em;
+			.caption {
+				font-size: 0.75em;
+			}
+			.btn {
+				border-color: $second-color;
+			}
+		}
+	}
+}
+#groops-edit {
+	.title {
+		margin: 1em 0;
+	}
+}
+
+#new-groop {
+	border-top: 2px solid $second-color;
+	padding-bottom: 15em;
+
+}

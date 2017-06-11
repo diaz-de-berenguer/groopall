@@ -1,0 +1,28 @@
+<% save_path = groop.new_record? ? groops_path : groop_path(groop) %>
+<%= simple_form_for groop, url: save_path do |f| %>
+	<div class="row">
+		<div class="col-xs-11">
+			<%= f.input :nickname, label: false, placeholder: "Nickname" %>
+		</div>
+	</div>
+	<hr>
+	<div id="friends">
+		<h4>Friends</h4>
+		<%= f.simple_fields_for :friends do |friend| %>
+			<%= render 'friend_fields', f: friend %>
+		<% end %>
+		<div class="links">
+			<%= link_to_add_association f, :friends, class: "second-color center" do %>
+				<div style='margin-top:1em'>
+					<small><span class="glyphicon glyphicon-plus"></span></small>
+					one more friend
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	<hr>
+	<%= button_tag type: 'submit', class: 'btn btn-default btn-block' do %>
+		Save
+	<% end %>
+<% end %>

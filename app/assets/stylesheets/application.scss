@@ -1,2 +1,106 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
+@import "font-awesome";
+
+// HTML Elements
+
+body {
+	font-family: $font-family;
+	background-color: $background-color;
+	color: $color;
+}
+
+a {
+	color: $color;
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h4 {
+	font-size: 1.2em;
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+}
+
+hr {
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+// Bootstrap Elements
+
+.navbar {
+	min-height: 2em;
+}
+
+.navbar-brand {
+	height: 2.5em;
+	padding: 0
+}
+
+.navbar-inverse {
+	background-color: $background-color;
+	border-color: $second-color;
+}
+
+.form-control {
+	height: 1.5em;
+	padding: 6px 12px;
+	font-size: 1em;
+}
+
+.btn {
+	font-size: 1em;
+	padding: 0.3em 0.6em;
+}
+
+// Custom Global Classes
+
+.remove-color {
+	color: $remove-color;
+}
+
+.second-color {
+	color: $second-color;
+	&:hover {
+		color: $second-color;
+	}
+	&:focus {
+		color: $second-color;
+	}
+}
+
+.grey-color {
+	color: $grey-color;
+	&:hover {
+		color: $grey-color;
+	}
+	&:focus {
+		color: $grey-color;
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+// Font-size for smaller screens
+
+@media(max-width: $md-breakpoint) {
+	body {
+		font-size: $sm-font-size
+	}
+	.navbar-brand {
+		height: 7.5em;
+	}
+}
+
+@import "groops";

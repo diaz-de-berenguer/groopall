@@ -1,0 +1,46 @@
+<div class="row each-row" id="groop-<%= g.id %>">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-10">
+				<div class="nickname">
+					<%= link_to groop_path(g) do %>
+						<%= g.nickname %>
+					<% end %>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<%= link_to edit_groop_path(g), class: 'btn pull-right grey-color' do %>
+					<small><i class="fa fa-pencil-square-o" aria-hidden="true"></i></small>
+				<% end %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8">
+				<%= link_to groop_path(g) do %>
+					<small><%= g.friends.map(&:name).to_sentence %></small>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div class="btn-group btn-group-justified">
+  	<%= link_to '#', class: "btn" do %>
+  		<small>
+	  		<i class="fa fa-phone" aria-hidden="true"></i><br>
+	  		<!-- <span class="caption">Call</span> -->
+  		</small>
+  	<% end %>
+  	<%= link_to '#', class: "btn" do %>
+  		<small>
+	  		<i class="fa fa-envelope" aria-hidden="true"></i><br>
+	  		<!-- <span class="caption">Email</span> -->
+  		</small>
+  	<% end %>
+  	<%= link_to '#', class: "btn" do %>
+  		<small>
+	  		<i class="fa fa-handshake-o" aria-hidden="true"></i><br>
+	  		<!-- <span class="caption">Hang!</span> -->
+  		</small>
+  	<% end %>
+	</div>
+</div>
