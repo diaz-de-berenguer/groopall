@@ -1,0 +1,5 @@
+<% current_user.groops.sorted.each do |g| %>
+	<div class="loop-of-groops">
+		<%= render 'groops/each_groop', g: g if g.id %>
+	</div>
+<% end %>

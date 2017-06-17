@@ -32,8 +32,26 @@
 					</div>
 				</div>
 			</div>
-
 			<hr>
+
+			<% @groop.interactions.order('date DESC').each do |int| %>
+				<div class="row">
+					<div class="col-xs-2 center">
+						<%= int.to_icon.html_safe %>
+					</div>
+					<div class="col-xs-8">
+						<%= int.date.strftime("%A, %b/%d/%Y") %>
+					</div>
+					<div class="col-xs-2">
+						<%= link_to groop_interaction_path(@groop, int), class: 'pull-right remove-color', method: :delete, data:
+						    { confirm: "Are you sure you want to delete this interaction?" } do %>
+							<small><i class="fa fa-trash-o" aria-hidden="true"></i></small>
+						<% end %>
+					</div>
+				</div>
+				<hr>
+			<% end %>
+
 		</div>
 	</div>
 </div><!-- #groops-index -->

@@ -1,0 +1,22 @@
+<%= content_tag :div, id: "#{type}-form-#{g.id}", class: 'collapse' do %>
+	<div class="container-fluid" style='padding-bottom:1em;'>
+		<%= simple_form_for g.interactions.build, url: groop_interactions_path(g), remote: true do |f| %>
+			<h4>Add interaction! <br><small><%= type.titleize %></small></h4>
+			<hr>
+			<%= f.hidden_field :type_of_interaction, value: type %>
+			<div class="row">
+				<div class="col-xs-3">
+					<p>Date:</p>
+				</div>
+				<div class="col-xs-9">
+					<%= f.input :date, label: false %>
+				</div>
+			</div>
+
+			<hr>
+			<%= button_tag type: 'submit', class: 'btn btn-default btn-block' do %>
+				Save <%= type.titleize %>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>

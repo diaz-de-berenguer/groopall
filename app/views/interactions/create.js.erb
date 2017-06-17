@@ -1,0 +1,6 @@
+<% if @errors %>
+	alert('Unable to save! <%= j @errors.html_safe %>');
+<% else %>
+	alert('Interaction Saved successfully!');
+	$('#all-groops').html('<%= j render "groops/loop_of_groops" %>')
+<% end %>

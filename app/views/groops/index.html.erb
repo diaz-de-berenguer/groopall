@@ -1,10 +1,8 @@
 <div id="groops-index">
 	<div class="col-md-8 col-md-offset-2">
-		<% @groops.each do |g| %>
-			<div class="loop-of-groops">
-				<%= render 'each_groop', g: g if g.id %>
-			</div>
-		<% end %>
+		<div id="all-groops">
+			<%= render 'loop_of_groops' %>
+		</div>
 
 		<div class="add-friends">
 			<div class="container-fluid">

@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-	resources :groops
+	resources :groops do
+		resources :interactions, only: [:create, :destroy]
+	end
 end

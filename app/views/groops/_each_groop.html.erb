@@ -20,27 +20,46 @@
 					<small><%= g.friends.map(&:name).to_sentence %></small>
 				<% end %>
 			</div>
+			<div class="col-xs-4">
+				<div class="last-interaction">
+					<div class="pull-right">
+						<small>Last</small> <br>
+						<small>
+							<% if g.interactions.any? %>
+								<%= g.latest_interaction.to_icon.html_safe %>
+								<%= g.latest_interaction.date.strftime("%x") %>
+							<% else %>
+								-
+							<% end %>
+						</small>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<div class="btn-group btn-group-justified">
-  	<%= link_to '#', class: "btn" do %>
+  	<%= link_to "#call-form-#{g.id}", class: "btn", data: { toggle: 'collapse' } do %>
   		<small>
 	  		<i class="fa fa-phone" aria-hidden="true"></i><br>
 	  		<!-- <span class="caption">Call</span> -->
   		</small>
   	<% end %>
-  	<%= link_to '#', class: "btn" do %>
+  	<%= link_to "#message-form-#{g.id}", class: "btn", data: { toggle: 'collapse' } do %>
   		<small>
 	  		<i class="fa fa-envelope" aria-hidden="true"></i><br>
 	  		<!-- <span class="caption">Email</span> -->
   		</small>
   	<% end %>
-  	<%= link_to '#', class: "btn" do %>
+  	<%= link_to "#hang-form-#{g.id}", class: "btn", data: { toggle: 'collapse' } do %>
   		<small>
 	  		<i class="fa fa-handshake-o" aria-hidden="true"></i><br>
 	  		<!-- <span class="caption">Hang!</span> -->
   		</small>
   	<% end %>
 	</div>
+
+	<% ["call", "message", "hang"].each do |type| %>
+		<%= render 'groops/collapse_form', g: g, type: type %>
+	<% end %>
 </div>
